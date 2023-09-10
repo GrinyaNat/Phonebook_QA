@@ -17,7 +17,7 @@ public class HelperBase {
     }
 
     public boolean isElementPresent(By locator) {
-        return driver.findElements(locator).size() > 0;//один элемент из списка
+        return driver.findElements(locator).size() > 0;
     }
 
     public boolean isElementPresent2(By locator) {
@@ -41,17 +41,19 @@ public class HelperBase {
         }
     }
 
-    public boolean isAlertPresent() { //class 'Alert'
-        Alert alert = new WebDriverWait(driver, 20)
+    public boolean isAlertPresent() {
+        //class Alert - alert initialization with expected conditions
+        Alert alert = new WebDriverWait(driver,20)
                 .until(ExpectedConditions.alertIsPresent());
         if (alert == null) {
             return false;
         } else {
+            //switch to alert
             driver.switchTo().alert();
+            //accept ok
             alert.accept();
             return true;
         }
-
     }
 
     public void pause(int millis) {

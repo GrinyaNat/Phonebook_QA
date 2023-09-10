@@ -2,21 +2,22 @@ package org.ait.phonebook;
 
 import org.ait.phonebook.models.Contact;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AddContactTests extends TestBase {
-    @BeforeMethod
-    public void ensurePrecondition(){
-        if (app.getUser().isLoginLinkPresent()){
-            app.getUser().click(By.xpath("/button[contains(.,'Sign Out')]"));
+import java.util.List;
 
+public class AddContactTests extends TestBase{
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
         }
-        //click on Login link - a:nth-child(4) -css
-        app.getContact().addContact();
-        //click on add Link - [href='/add'] -css
+        app.getUser().login();
+        //click on ADD link - [href='/add'] - css
         app.getContact().clickOnAddLink();
     }
 
@@ -24,15 +25,15 @@ public class AddContactTests extends TestBase {
     public void addContactPositiveTest() {
         //enter all input fields in contact form - input:nth-child(1) - css
         app.getContact().fillContactForm(new Contact()
-                .setName("Yarik")
-                .setSurname("Yurik")
+                .setName("Karl")
+                .setSurname("Adam")
                 .setPhone("1234567890")
-                .setEmail("yarik@gm.com")
-                .setAdress("Koblenz")
+                .setEmail("adam@gm.com")
+                .setAddress("Koblenz")
                 .setDesc("goalkeeper"));
-        //click on Save button
+        //click on Save button - .add_form__2rsm2 button - css
         app.getContact().clickOnSaveButton();
-        //assert contact is added by text
+        //assert by text contact is added
         Assert.assertTrue(app.getContact().isContactAdded("Karl"));
     }
 
@@ -40,5 +41,4 @@ public class AddContactTests extends TestBase {
     public void postCondition(){
         app.getContact().removeContact();
     }
-
 }

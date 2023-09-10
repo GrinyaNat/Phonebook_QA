@@ -7,29 +7,33 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase{
-
     @BeforeMethod
-    public void ensurePrecondition(){
-        if (app.getUser().isLoginLinkPresent()){
-            app.getUser().click(By.xpath("/button[contains(.,'Sign Out')]"));
-
+    public void ensurePrecondition() {
+        //precondition: user should be logged out
+        if(!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
         }
-        //click on Login link - a:nth-child(4) -css
-        app.getUser().clickLoginLink();
+        //click on Login link - a:nth-child(4) - css
+        app.getUser().clickOnLoginLink();
     }
 
     @Test
     public void loginPositiveTest() {
-        app.getUser().fillLoginRegistrationForm(new User().setEmail("Kicun@gmail.com")
-                .setPassword("Zarik2010!"));
+        //enter email - [placeholder='Email'] - css
+        app.getUser().fillLoginRegistrationForm(new User()
+                .setEmail("leno@gmail.com")
+                .setPassword("Bernd1234$"));
         //click on Login button
         app.getUser().clickOnLoginButton();
         //assert Sign Out button present
         Assert.assertTrue(app.getUser().isSignOutButtonPresent());
+    }
 
-    }@Test
+    @Test
     public void loginNegativeWithoutEmailTest() {
-        app.getUser().fillLoginRegistrationForm(new User().setPassword("Zarik2010!"));
+        //enter email - [placeholder='Email'] - css
+        app.getUser().fillLoginRegistrationForm(new User()
+                .setPassword("Bernd1234$"));
         //click on Login button
         app.getUser().clickOnLoginButton();
         //assert Sign Out button present

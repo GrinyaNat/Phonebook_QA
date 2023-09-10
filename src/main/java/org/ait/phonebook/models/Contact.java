@@ -1,12 +1,13 @@
 package org.ait.phonebook.models;
 
 public class Contact {
-    private String name;
-    private String surname;
-    private String phone;
-    private String email;
-    private String adress;
-    private String desc;
+
+    private  String name;
+    private  String surname;
+    private  String phone;
+    private  String email;
+    private  String address;
+    private  String desc;
 
     public Contact setName(String name) {
         this.name = name;
@@ -28,8 +29,8 @@ public class Contact {
         return this;
     }
 
-    public Contact setAdress(String adress) {
-        this.adress = adress;
+    public Contact setAddress(String address) {
+        this.address = address;
         return this;
     }
 
@@ -54,8 +55,8 @@ public class Contact {
         return email;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public String getDesc() {

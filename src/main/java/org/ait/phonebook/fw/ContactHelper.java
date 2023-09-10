@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class ContactHelper extends HelperBase {
+public class ContactHelper extends HelperBase{
+
     public ContactHelper(WebDriver driver) {
         super(driver);
     }
@@ -25,7 +26,7 @@ public class ContactHelper extends HelperBase {
         type(By.cssSelector("input:nth-child(2)"), contact.getSurname());
         type(By.cssSelector("input:nth-child(3)"), contact.getPhone());
         type(By.cssSelector("input:nth-child(4)"), contact.getEmail());
-        type(By.cssSelector("input:nth-child(5)"), contact.getAdress());
+        type(By.cssSelector("input:nth-child(5)"), contact.getAddress());
         type(By.cssSelector("input:nth-child(6)"), contact.getDesc());
     }
 
@@ -34,9 +35,9 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//button[.='Remove']"));
     }
 
-    public boolean isContactAdded(CharSequence text) {
+    public boolean isContactAdded(String text) {
         List<WebElement> contacts = driver.findElements(By.cssSelector("h2"));
-        for (WebElement el : contacts) {
+        for (WebElement el: contacts) {
             if (el.getText().contains(text))
                 return true;
         }
@@ -44,19 +45,21 @@ public class ContactHelper extends HelperBase {
     }
 
     public int sizeOfContacts() {
-        if (isElementPresent(By.cssSelector(".contact-item_card__2SOIM"))) ;
-        return driver.findElement(By.cssSelector(".contact-item_card__2SOIM")).size();
+        if (isElementPresent(By.cssSelector(".contact-item_card__2SOIM"))) {
+            return  driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
+        }
+        return 0;
     }
 
     public void addContact() {
-        clickLoginLink();
+        clickOnAddLink();
         fillContactForm(new Contact()
-                .setName("Yarik")
-                .setSurname("Yurik")
+                .setName("Karl")
+                .setSurname("Adam")
                 .setPhone("1234567890")
-                .setEmail("yarik@gm.com")
-                .setAdress("Koblenz")
+                .setEmail("adam@gm.com")
+                .setAddress("Koblenz")
                 .setDesc("goalkeeper"));
-        clickOnLoginButton();
+        clickOnSaveButton();
     }
 }

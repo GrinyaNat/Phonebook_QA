@@ -5,11 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class UserHelper extends HelperBase{
+
     public UserHelper(WebDriver driver) {
         super(driver);
     }
 
-    public void clickLoginLink() {
+    public void clickOnLoginLink() {
         click(By.cssSelector("a:nth-child(4)"));
     }
 
@@ -18,7 +19,7 @@ public class UserHelper extends HelperBase{
     }
 
     public boolean isLoginLinkPresent() {
-        return !isElementPresent(By.cssSelector("a:nth-child(4)"));
+        return isElementPresent(By.xpath("//a[.='LOGIN']"));
     }
 
     public void clickOnRegistrationButton() {
@@ -27,12 +28,11 @@ public class UserHelper extends HelperBase{
 
     public void fillLoginRegistrationForm(User user) {
         type(By.cssSelector("[placeholder='Email']"), user.getEmail());
-        //enter password - [placeholder='Password'] -css
         type(By.cssSelector("[placeholder='Password']"), user.getPassword());
     }
 
     public boolean isSignOutButtonPresent() {
-        return isElementPresent2(By.xpath("/button[contains(.,'Sign Out')]"));
+        return isElementPresent2(By.xpath("//button[contains(.,'Sign Out')]"));
     }
 
     public void clickOnLoginButton() {
@@ -40,10 +40,10 @@ public class UserHelper extends HelperBase{
     }
 
     public void login() {
-        clickLoginLink();
+        clickOnLoginLink();
         fillLoginRegistrationForm(new User()
-                .setEmail("Kicun@gmail.com")
-                .setPassword("Zarik2010!"));
+                .setEmail("leno@gmail.com")
+                .setPassword("Bernd1234$"));
         clickOnLoginButton();
     }
 }
