@@ -1,0 +1,12 @@
+3526 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+7744 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+7746 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+19351 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+19355 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+29607 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+29609 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+31099 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+31102 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+32130 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+32133 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+46600 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
