@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.ait.phonebook.RemoveContactTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-10T19:32:09" hostname="DESKTOP-OS617JJ" time="1.621">
+  <properties/>
+  <testcase name="removeContactPositiveTest" classname="org.ait.phonebook.RemoveContactTests" time="1.621"/>
+  <system-out><![CDATA[21:31:56.269 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+21:32:10.736 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

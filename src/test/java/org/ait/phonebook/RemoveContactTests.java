@@ -28,4 +28,3 @@ public class RemoveContactTests extends TestBase{
     }
 }
 
-

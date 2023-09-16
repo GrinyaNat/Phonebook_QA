@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.ait.phonebook.LoginTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-10T19:31:53" hostname="DESKTOP-OS617JJ" time="2.428">
+  <properties/>
+  <testcase name="loginNegativeWithoutEmailTest" classname="org.ait.phonebook.LoginTests" time="1.396"/>
+  <testcase name="loginPositiveTest" classname="org.ait.phonebook.LoginTests" time="0.907"/>
+  <system-out><![CDATA[21:31:53.745 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+21:31:55.235 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+21:31:55.238 [Test worker] INFO  org.ait.phonebook.TestBase -- Start test
+21:31:56.266 [Test worker] INFO  org.ait.phonebook.TestBase -- Stop test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
